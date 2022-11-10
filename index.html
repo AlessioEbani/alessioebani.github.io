@@ -28,9 +28,9 @@
     <head>
         <title>HTML5 Canvas Winning Wheel</title>
         <link rel="stylesheet" href="main.css" type="text/css" />
+        <script src="sentences.js"></script>
         <script type="text/javascript" src="Winwheel.js"></script>
         <script src="TweenMax.min.js"></script>
-        <script src="sentences.js"></script>
     </head>
     <body>
         <div align="center">
@@ -67,7 +67,7 @@
             </table>
         </div>
         <script>
-            const excuseId = {
+            const excuses = {
                 CONFERMA:1,
                 DOLORE:2,
                 SENSATE:3,
@@ -83,12 +83,12 @@
                 'textFontSize' : 20,    // Set font size as desired.
                 'segments'     :        // Define segments including colour and text.
                 [
-                   {'fillStyle' : '#eae56f', 'text' : 'Via giu\' ora vengo', 'id':excuseId.CONFERMA},
-                   {'fillStyle' : '#89f26e', 'text' : 'Dolori vari', 'id':excuseId.DOLORE},
-                   {'fillStyle' : '#7de6ef', 'text' : 'Sensate', 'id':excuseId.SENSATE},
-                   {'fillStyle' : '#e7706f', 'text' : 'Amici/familiari', 'id':excuseId.AMICI_FAMILIARI},
-                   {'fillStyle' : '#eae56f', 'text' : 'Atmosferiche', 'id':excuseId.ATMOSFERICHE},
-                   {'fillStyle' : '#89f26e', 'text' : 'Ti attacchi per 1 ora', 'id':excuseId.STOP_ORA},
+                   {'fillStyle' : '#eae56f', 'text' : 'Via giu\' ora vengo', 'id':excuses.CONFERMA},
+                   {'fillStyle' : '#89f26e', 'text' : 'Dolori vari', 'id':excuses.DOLORE},
+                   {'fillStyle' : '#7de6ef', 'text' : 'Sensate', 'id':excuses.SENSATE},
+                   {'fillStyle' : '#e7706f', 'text' : 'Amici/familiari', 'id':excuses.AMICI_FAMILIARI},
+                   {'fillStyle' : '#eae56f', 'text' : 'Atmosferiche', 'id':excuses.ATMOSFERICHE},
+                   {'fillStyle' : '#89f26e', 'text' : 'Ti attacchi per 1 ora', 'id':excuses.STOP_ORA},
                 ],
                 'animation' :           // Specify the animation to use.
                 {
@@ -191,9 +191,20 @@
             {
                 // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
                 document.getElementById("resultTextBlock").innerHTML = ""+getExcuse(indicatedSegment.id);
-                //FIXME: document.getElementById(GetBodyDesease()).innerHTML = ""+indicatedSegment.text;
                 resetWheel();
             }
+
+            function getExcuse(excuseId){
+                switch(excuseId){
+                    case excuses.CONFERMA:
+                        return getConfirm();
+                    case excuses.DOLORE: 
+                        return getBodyDesease();
+                    default:
+                        return getBodyDesease();
+                }
+            }
+
         </script>
 		<br>
 		<br>
