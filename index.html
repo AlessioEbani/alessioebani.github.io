@@ -66,21 +66,28 @@
             </table>
         </div>
         <script>
+            const idScuse = {};
+            idScuse.type = new Enum(
+                'conferma',
+                'dolore',
+                'sensate',
+                'amici_familiari',
+                'atmosferiche',
+                'stop_ora'
+            );
             // Create new wheel object specifying the parameters at creation time.
             let theWheel = new Winwheel({
-                'numSegments'  : 8,     // Specify number of segments.
+                'numSegments'  : 6,     // Specify number of segments.
                 'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
-                'textFontSize' : 28,    // Set font size as desired.
+                'textFontSize' : 20,    // Set font size as desired.
                 'segments'     :        // Define segments including colour and text.
                 [
-                   {'fillStyle' : '#eae56f', 'text' : 'Prize 1'},
-                   {'fillStyle' : '#89f26e', 'text' : 'Prize 2'},
-                   {'fillStyle' : '#7de6ef', 'text' : 'Prize 3'},
-                   {'fillStyle' : '#e7706f', 'text' : 'Prize 4'},
-                   {'fillStyle' : '#eae56f', 'text' : 'Prize 5'},
-                   {'fillStyle' : '#89f26e', 'text' : 'Prize 6'},
-                   {'fillStyle' : '#7de6ef', 'text' : 'Prize 7'},
-                   {'fillStyle' : '#e7706f', 'text' : 'Prize 8'}
+                   {'fillStyle' : '#eae56f', 'text' : 'Via giu\' ora vengo', 'id':idScuse.type.conferma},
+                   {'fillStyle' : '#89f26e', 'text' : 'Dolori vari', 'id':idScuse.type.dolore},
+                   {'fillStyle' : '#7de6ef', 'text' : 'Sensate', 'id':idScuse.type.sensate},
+                   {'fillStyle' : '#e7706f', 'text' : 'Amici/familiari', 'id':idScuse.type.amici_familiari},
+                   {'fillStyle' : '#eae56f', 'text' : 'Atmosferiche', 'id':idScuse.type.atmosferiche},
+                   {'fillStyle' : '#89f26e', 'text' : 'Ti attacchi per 1 ora', 'id':idScuse.type.stop_ora},
                 ],
                 'animation' :           // Specify the animation to use.
                 {
@@ -128,6 +135,7 @@
                     document.getElementById('spin_button').className = "clickable";
                 }
             }
+            powerSelected(1);
 
             // -------------------------------------------------------
             // Click handler for spin button.
