@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="main.css" type="text/css" />
         <script type="text/javascript" src="Winwheel.js"></script>
         <script src="TweenMax.min.js"></script>
+        <script src="sentences.js"></script>
     </head>
     <body>
         <div align="center">
@@ -181,8 +182,9 @@
             function alertPrize(indicatedSegment)
             {
                 // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
-				document.getElementById("resultTextBlock").innerHTML = ""+indicatedSegment.text;
-				resetWheel();
+				        document.getElementById("resultTextBlock").innerHTML = ""+indicatedSegment.text;
+                document.getElementById(GetBodyDesease()).innerHTML = ""+indicatedSegment.text;
+				        resetWheel();
             }
         </script>
 		<br>
