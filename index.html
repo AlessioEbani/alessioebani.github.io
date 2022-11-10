@@ -67,13 +67,13 @@
             </table>
         </div>
         <script>
-            var idScuse = {
-                CONFERMA,
-                DOLORE,
-                SENSATE,
-                AMICI_FAMILIARI,
-                ATMOSFERICHE,
-                STOP_ORA
+            const idScuse = {
+                CONFERMA:1,
+                DOLORE:2,
+                SENSATE:3,
+                AMICI_FAMILIARI:4,
+                ATMOSFERICHE:5,
+                STOP_ORA:6
             }
 
             // Create new wheel object specifying the parameters at creation time.
@@ -87,7 +87,7 @@
                    {'fillStyle' : '#89f26e', 'text' : 'Dolori vari', 'id':idScuse.DOLORE},
                    {'fillStyle' : '#7de6ef', 'text' : 'Sensate', 'id':idScuse.SENSATE},
                    {'fillStyle' : '#e7706f', 'text' : 'Amici/familiari', 'id':idScuse.AMICI_FAMILIARI},
-                   {'fillStyle' : '#eae56f', 'text' : 'Atmosferiche', 'id':idScuse.type.ATMOSFERICHE},
+                   {'fillStyle' : '#eae56f', 'text' : 'Atmosferiche', 'id':idScuse.ATMOSFERICHE},
                    {'fillStyle' : '#89f26e', 'text' : 'Ti attacchi per 1 ora', 'id':idScuse.STOP_ORA},
                 ],
                 'animation' :           // Specify the animation to use.
