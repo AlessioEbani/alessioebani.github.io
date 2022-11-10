@@ -60,8 +60,6 @@
                             </table>
                             <br />
                             <img id="spin_button" src="spin_off.png" alt="Spin" onClick="startSpin();" />
-                            <br /><br />
-                            &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
                         </div>
                     </td>
                     <td width="438" height="582" class="the_wheel" align="center" valign="center">
@@ -191,6 +189,7 @@
             {
                 // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
                 alert("You have won " + indicatedSegment.text);
+                resetWheel();
             }
         </script>
     </body>
