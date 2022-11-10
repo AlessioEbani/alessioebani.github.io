@@ -8,3 +8,6 @@ function GetBodyDesease(){
     excuse+=Math.floor(Math.random*bodyParts.length);
     return excuse;
 }
+function getExcuse(excuseId){
+    
+}
