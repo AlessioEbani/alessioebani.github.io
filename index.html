@@ -67,15 +67,15 @@
             </table>
         </div>
         <script>
-            const idScuse = {};
-            idScuse.type = new Enum(
-                'conferma',
-                'dolore',
-                'sensate',
-                'amici_familiari',
-                'atmosferiche',
-                'stop_ora'
-            );
+            var idScuse = {
+                CONFERMA,
+                DOLORE,
+                SENSATE,
+                AMICI_FAMILIARI,
+                ATMOSFERICHE,
+                STOP_ORA
+            }
+
             // Create new wheel object specifying the parameters at creation time.
             let theWheel = new Winwheel({
                 'numSegments'  : 6,     // Specify number of segments.
@@ -83,12 +83,12 @@
                 'textFontSize' : 20,    // Set font size as desired.
                 'segments'     :        // Define segments including colour and text.
                 [
-                   {'fillStyle' : '#eae56f', 'text' : 'Via giu\' ora vengo', 'id':idScuse.type.conferma},
-                   {'fillStyle' : '#89f26e', 'text' : 'Dolori vari', 'id':idScuse.type.dolore},
-                   {'fillStyle' : '#7de6ef', 'text' : 'Sensate', 'id':idScuse.type.sensate},
-                   {'fillStyle' : '#e7706f', 'text' : 'Amici/familiari', 'id':idScuse.type.amici_familiari},
-                   {'fillStyle' : '#eae56f', 'text' : 'Atmosferiche', 'id':idScuse.type.atmosferiche},
-                   {'fillStyle' : '#89f26e', 'text' : 'Ti attacchi per 1 ora', 'id':idScuse.type.stop_ora},
+                   {'fillStyle' : '#eae56f', 'text' : 'Via giu\' ora vengo', 'id':idScuse.CONFERMA},
+                   {'fillStyle' : '#89f26e', 'text' : 'Dolori vari', 'id':idScuse.DOLORE},
+                   {'fillStyle' : '#7de6ef', 'text' : 'Sensate', 'id':idScuse.SENSATE},
+                   {'fillStyle' : '#e7706f', 'text' : 'Amici/familiari', 'id':idScuse.AMICI_FAMILIARI},
+                   {'fillStyle' : '#eae56f', 'text' : 'Atmosferiche', 'id':idScuse.type.ATMOSFERICHE},
+                   {'fillStyle' : '#89f26e', 'text' : 'Ti attacchi per 1 ora', 'id':idScuse.STOP_ORA},
                 ],
                 'animation' :           // Specify the animation to use.
                 {
